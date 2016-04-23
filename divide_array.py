@@ -1,6 +1,5 @@
 # from bigfloat import * 
 from decimal import *
-
 N = int(raw_input())
 A = map(int, raw_input().split())
 Q = int(raw_input())
