@@ -16,7 +16,10 @@ object HelpMike {
         case IndexedSeq(i,j) => (i < j && (i + j) % k == 0)}.size
       println(count)
       count=0
-      T -= 1      
+      T -= 1
+//      println((1 to n).combinations(2).filter{
+//        case IndexedSeq(i,j) => (i < j && (i + j) % k == 0)}.size)     
+      
     }
   }
 }
