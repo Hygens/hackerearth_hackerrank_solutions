@@ -1,7 +1,7 @@
 T=int(raw_input())
 for n in range (T):
     X,Y,N=map(int,raw_input().split(" ")) ;  L=[Y for i in range(X)]
-    if N<=X: print Y
+    if N<=X: print (Y)
     else: 
         for i in range(X+1,N+1):
             if i==X+1:
