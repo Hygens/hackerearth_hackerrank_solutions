@@ -11,9 +11,5 @@ object FindPairs {
     var A:List[Int] = readLine().split(" ").map(_.toInt).toList
     var L:List[(Int,Int)] = A.flatMap(x => A.map(y => junk(x,y,A)))
     println(L.toString)
-//    var L:List[(Int,Int)] = for((i,j) <- A zip A.tail 
-//        if (j<i && A(j)==A(i)) 
-//    ) yield (i,j)
-//    println(L.length)    
   }
 }
