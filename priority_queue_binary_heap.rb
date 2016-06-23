@@ -25,11 +25,11 @@ class PriorityQueue
     # bubble up the element that we just added
     bubble_up(@elements.size - 1)
   end
-  
+
   def peek
     @elements[1]
   end
-  
+
   def pop
     # exchange the root with the last element
     exchange(1, @elements.size - 1)
@@ -63,6 +63,10 @@ class PriorityQueue
     # repeat the process until we reach a point where the parent
     # is larger than its children
     bubble_down(child_index)
+  end
+
+  def qsize
+    @elements.size
   end
 end
 
