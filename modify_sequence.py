@@ -1,0 +1,15 @@
+import sys
+from fractions import gcd
+n = int(sys.stdin.readline().strip())
+l = map(int,sys.stdin.readline().strip().split(' '))
+l = sorted(l)
+evens = filter(lambda x: x%2==0,l)
+odds = filter(lambda x: x%2!=0,l)
+if l.count(0)>0 and n!=1: print('NO')
+elif l.count(0)==0 and n==1 and l[0]!=0: print('NO')
+elif l.count(0)>0 and n==1: print('YES')
+elif (n==len(evens)) and n%2==0: print('YES')
+elif (n==len(odds)) and n%2==0: print('YES')
+elif ((len(evens)%2==0 and len(odds)%2==0) 
+      and gcd(len(evens),len(odds))<=10): print('YES')
+else: print('NO')
