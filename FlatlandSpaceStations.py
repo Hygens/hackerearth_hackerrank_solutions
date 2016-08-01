@@ -16,7 +16,7 @@ if n>m:
                 dist.append((idx-j+1)//2)
         except ValueError:
             break
-    print(max(dist))
+    print(min(dist))
 else:
     print(0)    
 

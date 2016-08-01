@@ -23,7 +23,7 @@ def pfac(num):
             terms.append('{:,}^{}'.format(e,d[e]))
         else:
             terms.append('{:,}'.format(e))
-    print (' * '.join(terms),'=','{:,}'.format(num))
+    print ('*'.join(terms))
 
 T=int(raw_input())
 while T>0:
