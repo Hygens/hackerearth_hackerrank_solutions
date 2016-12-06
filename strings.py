@@ -1,7 +1,8 @@
 from decimal import Decimal
-T=int(raw_input())
+T=int(input())
 while T>0:
-    N,M=map(Decimal,raw_input().split())
-    if (N==M) or (N>1 and M>1 and (N/M==M or M/N==N)): print ('YES')
+    N,M=map(Decimal,input().split())    
+    if (N==M): print ('YES')
+    elif (N==2 and M==4) or (N==4 and M==2): print('YES')
     else: print ('NO')
     T-=1
