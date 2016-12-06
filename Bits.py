@@ -1,0 +1,1 @@
+[print(bin(int(input().strip())).count('1')) for _ in range(int(input().strip()))]
