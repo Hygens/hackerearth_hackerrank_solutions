@@ -1,0 +1,1 @@
+gets;arr=gets.split.map(&:to_i);p arr.max_by{|i| arr.count(i)}

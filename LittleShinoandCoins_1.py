@@ -1,4 +1,4 @@
-import sys
+from sys import stdin,stdout
 def results(input_string,k,size):
     s=0
     i=0
@@ -10,7 +10,8 @@ def results(input_string,k,size):
             j+=1
         i+=1
     return s
-k = int(sys.stdin.readline().strip())
-s = sys.stdin.readline().strip()
+k = int(stdin.readline().strip())
+s = stdin.readline().strip()
 size = len(s)
-print(results(s, k, size))
+stdout.write(str(results(s, k, size))+'\n')
+
