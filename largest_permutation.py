@@ -1,5 +1,5 @@
-N, K = list(map(int, input().split()))
-A = dict((k,v) for k,v in enumerate(map(int, input().split())))
+N, K = [int(x) for x in input().split(' ')]
+A = [int(x) for x in input().split(' ')]
 if K >= N - 1: 
     print(*sorted(A, reverse = True), sep = ' ')
 else:

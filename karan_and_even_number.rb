@@ -1,0 +1,1 @@
+while ((n=gets.to_i)!=-1) do puts (n%2==0?n:'') end

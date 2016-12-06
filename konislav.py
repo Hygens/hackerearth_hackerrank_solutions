@@ -1,0 +1,1 @@
+l = sorted(map(int, input().strip().split(' '))) ; print(l[0]*l[2])
