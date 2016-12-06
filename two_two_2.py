@@ -1,28 +1,23 @@
 from collections import deque
-import sys 
+from sys import stdin,stdout
+import math 
+
 AdjList = [] 
-def init_trie(keywords):
-    """ creates a trie of keywords, then sets fail transitions """
+def init_trie(keywords):   
     create_empty_trie()
     add_keywords(keywords)
-    set_fail_transitions()
-     
+    set_fail_transitions()     
 def create_empty_trie():
-    """ initalize the root of the trie """
     AdjList.append({'value':'', 'next_states':[],'fail_state':0,'output':[]})
-
 def add_keywords(keywords):
-    """ add all keywords in list of keywords """
     for keyword in keywords:
-        add_keyword(keyword)
-        
+        add_keyword(keyword)        
 def find_next_state(current_state, value):
     for node in AdjList[current_state]["next_states"]:
         if AdjList[node]["value"] == value:
             return node
     return None
 def add_keyword(keyword):
-    """ add a keyword to the trie and mark output at the last node """
     current_state = 0
     j = 0
     keyword = keyword.lower()
@@ -39,7 +34,7 @@ def add_keyword(keyword):
         AdjList.append(node)
         AdjList[current_state]["next_states"].append(len(AdjList) - 1)
         current_state = len(AdjList) - 1
-    AdjList[current_state]["output"].append(keyword)
+    AdjList[current_state]["output"].append(keyword)    
 def set_fail_transitions():
     q = deque()
     child = 0
@@ -58,9 +53,7 @@ def set_fail_transitions():
             if AdjList[child]["fail_state"] is None:
                 AdjList[child]["fail_state"] = 0
             AdjList[child]["output"] = AdjList[child]["output"] + AdjList[AdjList[child]["fail_state"]]["output"]
-
-def get_keywords_found(line):
-    """ returns true if line contains any keywords in trie """
+def get_keywords_found(line):    
     line = line.lower()
     current_state = 0
     keywords_found = []
@@ -75,9 +68,9 @@ def get_keywords_found(line):
             for j in AdjList[current_state]["output"]:
                 count_words+=1
     return count_words
-T = int(sys.stdin.readline())
-l = []
+T = int(stdin.readline())
+l=[str(2**x) for x in range(0,801)]
 init_trie(l)
 while T>0:
-    print(get_keywords_found(sys.stdin.readline()))
+    stdout.write(str(get_keywords_found(stdin.readline()))+'\n')
     T-=1
